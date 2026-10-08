@@ -1,0 +1,13 @@
+{
+  "aoi": {
+    "tipo": "punto_radio",
+    "latitud": -12.60,
+    "longitud": -69.20,
+    "radio_km": 10
+  },
+  "fecha_inicio": "2025-01-01",
+  "fecha_fin": "2025-03-31",
+  "orbita": "AMBAS",
+  "max_resultados": 20,
+  "escala_m": 10
+}
