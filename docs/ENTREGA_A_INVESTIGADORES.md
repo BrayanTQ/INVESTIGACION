@@ -18,6 +18,3 @@
 - estrategia de etiquetado de deforestación.
 - definición científica del modelo de predicción y del componente de IA generativa.
 
-## Qué no debe asumirse todavía
-
-La presencia de módulos PyTorch/TensorFlow no significa que el modelo científico final esté definido. Son componentes experimentales para una fase posterior.
