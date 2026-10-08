@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deforest-s1-acquisition"
+version = "0.1.1"
+description = "CLI para búsqueda y descarga Sentinel-1 del proyecto de investigación sobre deforestación amazónica"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "asf-search==14.0.3"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9"
+]
+
+[project.scripts]
+deforest-s1 = "deforest_s1.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
