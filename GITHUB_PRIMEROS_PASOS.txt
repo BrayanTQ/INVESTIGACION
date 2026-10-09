@@ -1,0 +1,46 @@
+1. CREAR EN GITHUB UN REPOSITORIO PRIVADO
+Nombre: deforest-s1-acquisition
+No agregar README, .gitignore ni licencia desde GitHub.
+
+2. ABRIR CMD EN LA CARPETA DEL PROYECTO
+
+git init
+git branch -M main
+git add .
+git status
+git commit -m "feat: versión inicial del módulo de adquisición Sentinel-1"
+
+3. ENLAZAR CON EL REPOSITORIO DE GITHUB
+
+git remote add origin https://github.com/USUARIO_O_ORGANIZACION/deforest-s1-acquisition.git
+git push -u origin main
+
+4. AGREGAR INVESTIGADORES
+GitHub > Repositorio > Configuración (Settings) > Colaboradores / Administrar acceso (Collaborators / Manage access)
+
+5. ANTES DE COMPARTIR
+
+python -m venv .venv
+.venv\Scripts\activate
+python -m pip install -e ".[dev]"
+pytest
+deforest-s1 --help
+
+6. PRUEBA REAL EN UNA PC CON INTERNET
+
+deforest-s1 diagnostico
+deforest-s1 buscar --configuracion config\search.example.json
+
+Luego, con token NASA Earthdata:
+
+set EARTHDATA_TOKEN=TU_TOKEN
+
+deforest-s1 descargar --manifiesto outputs\MANIFEST.json --seleccionar 1 --directorio-salida downloads --autenticacion token
+
+IMPORTANTE:
+- No subir tokens, passwords, .env, _netrc, archivos .zip Sentinel-1 ni GeoTIFF pesados.
+- Mantener el repositorio privado hasta decisión de los investigadores principales.
+
+
+ANTES DE INVITAR COLABORADORES:
+Revisar docs\ACCESOS_Y_ROLES_GITHUB.md
